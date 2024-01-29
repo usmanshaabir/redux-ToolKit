@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo } from '../feature/todo/todoSlice';
 import { increment } from '../feature/Percentage/percentageSlice';
+import { decrement } from '../feature/Percentage/percentageSlice';
 
 
 export default function AddTodo() {
@@ -30,8 +31,9 @@ export default function AddTodo() {
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
-      <button onClick={handleIncrement}>add</button >
+      <button onClick={handleIncrement} style={{ backgroundColor: "red" }}>add</button >
       <p>{count} dsd</p>
+      <button onClick={() => { dispatch(decrement()) }} style={{ backgroundColor: "green" }}>subtract</button >
     </>
   )
 }
